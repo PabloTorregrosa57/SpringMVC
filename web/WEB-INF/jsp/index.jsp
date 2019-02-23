@@ -7,15 +7,6 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <jsp:include page="cabecera.jsp"/>
-
-<!--        <link href="prueba.css" rel="stylesheet">    
--->
-<!--        <link href="prueba.css" rel="stylesheet">    
-        <title>Crud</title> <!-- descargar el cdn de boosttrap https://getbootstrap.com/docs/4.2/getting-started/introduction/ css  para mejor presentaciòn -->
-<!--        <link href="prueba.css" rel="stylesheet">    
-        <meta http-equiv="X-UA-Comptible" content="IE=edge"> -->
-        <!--        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-        -->
         <meta name="viewpot" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -25,41 +16,102 @@
     <body>
         <jsp:include page="menu.jsp"></jsp:include>
 
-            <div class="container mt-4">
-                <div class="card border-info">
-                    <div class="card-header bg-info text-white">
-                        <p class="prueba">pageContext.request.contextPath: [${pageContext.request.contextPath}]</p><br>
-                    <a class="btn btn-light" href="${pageContext.request.contextPath}/editorial/agregar">Nuevo Regisdtro</a>
-                </div>
-                <div class="card-body">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>CODIGO</th>
-                                <th>NOMBRE</th>
-                                <th>CONTACTO</th>
-                                <th>TELEFONO</th>
-                                <th>OPERACIONES</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <c:forEach var="dato" items="${lista}">
-                                <tr>
-                                    <td>${dato.codigo_editorial}</td>
-                                    <td>${dato.nombre_editorial}</td>
-                                    <td>${dato.contacto}</td>
-                                    <td>${dato.telefono}</td>
-                                    <td>
-                                        <a href="editorial/editar?codigo=${dato.codigo_editorial}" class="btn btn-warning">Editar</a>
-                                        <a href="editorial/eliminar?codigo=${dato.codigo_editorial}" class="btn btn-danger">Eliminar</a>
-                                    </td>
-                                </tr>
-                            </c:forEach>
-                        </tbody>
-                    </table>
-                </div>
+       <div class="container">
+            <div class="row">
+                <h2>Inventario de libros</h2>
             </div>
-            <jsp:include page="footer.jsp"></jsp:include>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="glyphicon glyphicon-book huge"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">10</div>
+                                        <div><h4>Libros</h4></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Ver libros</span>
+                                    <span class="pull-right"><i class="glyphicon glyphicon-arrow-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="glyphicon glyphicon-user huge"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">10</div>
+                                        <div><h4>Autores</h4></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="${pageContext.request.contextPath}/libro/listar.htm">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Ver autores</span>
+                                    <span class="pull-right"><i class="glyphicon glyphicon-arrow-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="glyphicon glyphicon glyphicon-education huge"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">10</div>
+                                        <div><h4>Editoriales</h4></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="${pageContext.request.contextPath}/editorial/listar.htm">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Ver editoriales</span>
+                                    <span class="pull-right"><i class="glyphicon glyphicon-arrow-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="glyphicon glyphicon-folder-open huge"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">10</div>
+                                        <div><h4>Genero</h4></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Ver generos</span>
+                                    <span class="pull-right"><i class="glyphicon glyphicon-arrow-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                                        
+                </div>
         </div>
+                
     </body>
 </html>

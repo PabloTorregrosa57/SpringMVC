@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView; // OJO es de servlet nò de portlet
 
 @Controller
-public class Controlador {
+public class EditorialController {
 
     Conexion con = new Conexion(); //para empesar a listar los datos
     JdbcTemplate jdbcTemplate = new JdbcTemplate(con.Conectar()); //Instanciar el template con paràmetro con.Conectar
@@ -29,12 +29,12 @@ public class Controlador {
         return mav; // pasar al index.jsp
     }
 
-    @RequestMapping(value = "editorial/listara.htm", method = RequestMethod.GET) // htm como quedò al crear el proyecto, puede cambiarse a .php o... 
+    @RequestMapping(value = "editorial/listar.htm", method = RequestMethod.GET) // htm como quedò al crear el proyecto, puede cambiarse a .php o... 
     public ModelAndView Listara() {
         String sql = "SELECT * FROM editoriales";
         datos = this.jdbcTemplate.queryForList(sql);
         mav.addObject("lista", datos);  // para enviar
-        mav.setViewName("index");
+        mav.setViewName("editorial/listar");
         return mav; // pasar al index.jsp
     }
 
@@ -65,7 +65,7 @@ public class Controlador {
     
     @RequestMapping(value = "editorial/editar", method = RequestMethod.POST)
     public ModelAndView Editar(Editorial e){
-//        System.out.println("Controller.Controlador.Editar() CODIGO A EDITAR " + e.getCodigo()); // systrace [TAB]  // sout [TAB]
+//        System.out.println("Controller.EditorialController.Editar() CODIGO A EDITAR " + e.getCodigo()); // systrace [TAB]  // sout [TAB]
         
          String sql= "UPDATE editoriales SET nombre_editorial=?, contacto=?, telefono=? WHERE codigo_editorial = ?"; //'" + e.getCodigo() + "'";
          this.jdbcTemplate.update(sql, e.getNombre(),e.getContacto(),e.getTelefono(), codigo);

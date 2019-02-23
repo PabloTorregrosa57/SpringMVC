@@ -49,7 +49,7 @@ was: <?xml version="1.0" encoding="UTF-8"?>
         <property name="mappings">
             <props>
                 <prop key="index.htm">controlador</prop> 
-                <prop key="editorial/listara.htm">controlador</prop>
+                <prop key="editorial/listar.htm">controlador</prop>
                 <prop key="editorial/agregar">controlador</prop>
                 <prop key="editorial/editar">controlador</prop>
                 <prop key="editorial/eliminar">controlador</prop>
@@ -60,6 +60,7 @@ was: <?xml version="1.0" encoding="UTF-8"?>
     <context:annotation-config /> 
     <mvc:annotation-driven />
     <context:component-scan base-package = "controlador.app" />
+    <mvc:resources mapping="assets/**" location="/WEB-INF/jsp/assets/"></mvc:resources>
     
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
@@ -67,7 +68,8 @@ was: <?xml version="1.0" encoding="UTF-8"?>
           p:suffix=".jsp" >
     </bean>
        
-    <bean name="controlador" class="Controller.Controlador">
+    <bean name="controlador" class="Controller.EditorialController">
     </bean>
 
 </beans>
+

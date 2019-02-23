@@ -5,12 +5,15 @@
 
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-        <title>Crud</title> <!-- descargar el cdn de boosttrap https://getbootstrap.com/docs/4.2/getting-started/introduction/ css  para mejor presentaciòn -->
+        <jsp:include page="../cabecera.jsp"/>
+        <meta name="viewpot" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
     </head>
 
     <body>
+        <jsp:include page="../menu.jsp"></jsp:include>
         <div class="container mt-4">
             <div class="card border-info">
                 <div class="card-header bg-info text-white">

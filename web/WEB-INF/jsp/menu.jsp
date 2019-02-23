@@ -9,12 +9,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="prueba">Ejemplo MVC</a>
             <a class="navbar-brand" href="#">Ejemplo MVC</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.jsp">Inicio</a></li> 
+                <li class="active"><a href="index.htm">Inicio</a></li> 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
                        role="button" aria-haspopup="true" 
@@ -47,8 +46,8 @@
                        role="button" aria-haspopup="true" 
                        aria-expanded="false">Editoriales<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="editorial/nuevo">Registrar editorial</a></li>
-                        <li><a href="editorial/listar">Ver lista de editoriales</a></li>
+                        <li><a href="${pageContext.request.contextPath}/editorial/nuevo.htm">Registrar editorial</a></li>
+                        <li><a href="${pageContext.request.contextPath}/editorial/listar.htm">Ver lista de editoriales</a></li>
                     </ul>
                 </li>
             </ul>
