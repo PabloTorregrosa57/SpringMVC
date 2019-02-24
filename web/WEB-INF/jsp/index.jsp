@@ -4,22 +4,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
     <head>
+        <title>Crud</title> 
         <jsp:include page="cabecera.jsp"/>
-
-<!--        <link href="prueba.css" rel="stylesheet">    
--->
-<!--        <link href="prueba.css" rel="stylesheet">    
-        <title>Crud</title> <!-- descargar el cdn de boosttrap https://getbootstrap.com/docs/4.2/getting-started/introduction/ css  para mejor presentaciòn -->
-<!--        <link href="prueba.css" rel="stylesheet">    
-        <meta http-equiv="X-UA-Comptible" content="IE=edge"> -->
-        <!--        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-        -->
-        <meta name="viewpot" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-
     </head>
 
     <body>
@@ -60,6 +48,8 @@
                 </div>
             </div>
             <jsp:include page="footer.jsp"></jsp:include>
-        </div>
+            </div>
+            
+        <jsp:include page="includejs.jsp"></jsp:include>
     </body>
 </html>

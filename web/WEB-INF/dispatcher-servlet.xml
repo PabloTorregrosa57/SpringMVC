@@ -69,5 +69,8 @@ was: <?xml version="1.0" encoding="UTF-8"?>
        
     <bean name="controlador" class="Controller.Controlador">
     </bean>
-
+    
+    <!--Se mapea la carpeta de recursos-->
+    <mvc:resources mapping="/assets/**" location="/assets/" />
+    <mvc:annotation-driven />
 </beans>

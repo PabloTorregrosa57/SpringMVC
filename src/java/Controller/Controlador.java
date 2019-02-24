@@ -2,7 +2,6 @@ package Controller;
 
 import Config.Conexion;
 import Entidad.Editorial;
-import com.sun.net.httpserver.HttpServer;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -51,9 +50,9 @@ public class Controlador {
         this.jdbcTemplate.update(sql, e.getCodigo(), e.getNombre(), e.getContacto(), e.getTelefono());
         return new ModelAndView("redirect:/index");
     }
-    
+
     @RequestMapping(value = "editorial/editar", method = RequestMethod.GET)
-    public ModelAndView Editar(HttpServletRequest request){
+    public ModelAndView Editar(HttpServletRequest request) {
         codigo = request.getParameter("codigo");
         String sql = "SELECT * FROM editoriales WHERE codigo_editorial = '" + codigo + "'";
         datos = this.jdbcTemplate.queryForList(sql);
@@ -62,21 +61,21 @@ public class Controlador {
         mav.setViewName("editorial/editar");
         return mav;
     }
-    
-    @RequestMapping(value = "editorial/editar", method = RequestMethod.POST)
-    public ModelAndView Editar(Editorial e){
-//        System.out.println("Controller.Controlador.Editar() CODIGO A EDITAR " + e.getCodigo()); // systrace [TAB]  // sout [TAB]
-        
-         String sql= "UPDATE editoriales SET nombre_editorial=?, contacto=?, telefono=? WHERE codigo_editorial = ?"; //'" + e.getCodigo() + "'";
-         this.jdbcTemplate.update(sql, e.getNombre(),e.getContacto(),e.getTelefono(), codigo);
 
-         return new ModelAndView("redirect:/index");
+    @RequestMapping(value = "editorial/editar", method = RequestMethod.POST)
+    public ModelAndView Editar(Editorial e) {
+//        System.out.println("Controller.Controlador.Editar() CODIGO A EDITAR " + e.getCodigo()); // systrace [TAB]  // sout [TAB]
+
+        String sql = "UPDATE editoriales SET nombre_editorial=?, contacto=?, telefono=? WHERE codigo_editorial = ?"; //'" + e.getCodigo() + "'";
+        this.jdbcTemplate.update(sql, e.getNombre(), e.getContacto(), e.getTelefono(), codigo);
+
+        return new ModelAndView("redirect:/index");
     }
-    
+
     @RequestMapping("editorial/eliminar")
-    public ModelAndView Eliminar(HttpServletRequest request){
+    public ModelAndView Eliminar(HttpServletRequest request) {
         codigo = request.getParameter("codigo");
-        String sql="DELETE FROM editoriales WHERE codigo_editorial = '" + codigo +"'";
+        String sql = "DELETE FROM editoriales WHERE codigo_editorial = '" + codigo + "'";
         this.jdbcTemplate.update(sql);
         return new ModelAndView("redirect:/index");
     }

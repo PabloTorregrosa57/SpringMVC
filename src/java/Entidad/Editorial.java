@@ -4,12 +4,12 @@ package Entidad;
  *
  * @author Pablo
  */
-
 public class Editorial {
+
     private String codigo;
-   private String nombre;
-   private String contacto;
-   private String telefono;
+    private String nombre;
+    private String contacto;
+    private String telefono;
 
     public Editorial() {
     }
@@ -50,7 +50,5 @@ public class Editorial {
     public String toString() {
         return "Editorial{" + "codigo=" + codigo + ", nombre=" + nombre + ", contacto=" + contacto + ", telefono=" + telefono + '}';
     }
-    
-    
-    
+
 }
